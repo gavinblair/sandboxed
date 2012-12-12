@@ -58,6 +58,7 @@ hr {
 
 img {
     vertical-align: middle;
+    max-width: 100%;
 }
 
 /*
@@ -97,7 +98,7 @@ textarea {
     			font-size: 40px;
 			}
             html.act1 {
-                background: #000 url(../img/1.jpg) no-repeat center center fixed; 
+                background: #000; /* url(../img/1.jpg) no-repeat center center fixed; */
             }
             html.act2{
                 background: #000 url(../img/2.jpg) no-repeat center center fixed;
