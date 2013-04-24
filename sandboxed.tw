@@ -1,0 +1,60 @@
+:: StoryTitle
+Sandboxed
+
+:: StoryAuthor
+by Gavin Blair
+
+:: Start [bookmark]
+<html><img src='1.gif' /></html>
+A ''COMPLETE NOOB'' stands in a field. He has just entered a certain game for the first time.
+        It is dark, and the sounds of ''HORRIBLE GROWLING'' fill the air.
+
+* [[Enter Name]]
+
+
+:: Enter Name
+<html><img src='2.gif' /></html>
+ Your name is Peter, but online you go by //forpetessake//. You are in an open world sandbox game called ''SANDBOXED''.  This is your first time playing a game like this, and to be honest you are ''A LITTLE SCARED''. Is it supposed to be this dark when you start the game?
+
+The growls are getting louder. What will you do?
+
+* [[Look Around]]
+
+:: Look Around
+<html><img src='3.gif' /></html>
+You can't see much. After some straining you think you can see red glowing eyes in the darkness. You are standing in a field of tall grass.
+
+The red glowing eyes are coming closer, and the growling intensifies.
+
+* [[pick up a blade of grass]]
+
+:: pick up a blade of grass
+<html><img src='4.gif' /></html>
+You pluck a large, sturdy looking blade of grass and prepare to defend yourself with it. Boy, do you feel stupid. And terrified.
+
+* [[use blade of grass as a sword]]
+
+:: use blade of grass as a sword
+<html><img src='5.gif' /></html>
+You hold out the blade of grass to the enclosing group of red eyes and wave it vigorously. You aren't even Level 1 yet, how hard could these things be to kill? There was no tutorial, no wise wizard handing you a sword and sending you on your way... You just woke up in this terrifying grass field from hell!
+
+So far, you think, this game sucks.
+
+You can now see sharp teeth bared under each set of red eyes.
+
+* [[growl at the red eye monsters]]
+
+:: growl at the red eye monsters
+<html><img src='6.gif' /></html>
+You give your best growl, hoping to intimidate- uh oh, looks like you're being ripped to shreds by monsters. You guess you can say you saw that coming. After a few seconds you are dead.
+
+''GAME OVER''
+
+* [[respawn]]
+
+:: respawn
+You wake up in the same field. It's still dark, and there are still monsters all over. It looks like they have just finished ripping someone to shreds, and they are now looking at you.
+
+* [[RUN]]
+
+:: RUN
