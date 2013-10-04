@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>JAWS: The Text Adventure</title>
+
+  
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta name="description" content="A lost ZX Spectrum classic unearthed from the archives and brought to life." />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="JAWS" />
+	<meta name="format-detection" content="telephone=no" />
+
+	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+
+	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
+	<link rel="shortcut icon" href="http://images.icnetwork.co.uk/collections/usvsth3m/favicon.ico" />
+	<link rel="image_src" href="img/image_src.png" />
+	<link rel="stylesheet" href="css/normalize.css" media="screen,print" />
+	<link rel="stylesheet" href="css/main.css" media="screen,print" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" />
+
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/tools.js"></script>
+	<script src="js/places-data.js"></script>
+	<script src="js/messages-data.js"></script>
+	<script src="js/main.js"></script>
+
+
+</head>
+<body>
+
+	<div id="game" class="paper7">
+		<div id="gameContent" class="ink1"></div>
+		<div id="gameTitle" class="paper5 bright">
+			<p class="ink2 bright">Mirrorsoft presents</p>
+			<h1><img src="img/title.png" alt="" />JAWS</h1>
+			<p class="ink1 bright">THE TEXT ADVENTURE</p>
+			<p class="ink0 bright">&nbsp;© 1984 Mirrorsoft<br />Coding by Dave Crud<br />Graphics by Sara Crud</p>
+			<p class="paper1 ink7 bright"><br />&nbsp;+++ <span class="paper1 ink7 bright flash">Press Any Key</span> To Start +++</p>
+		</div>
+		<div id="gameLoaded" class="paper7">
+			<p><br />Program: JAWS</p>
+			<p class="paper2 ink6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAME LOADED<br />&nbsp;&nbsp;Stop tape and <span class="paper2 ink6 flash">Press any key</span></p>
+		</div>
+		<form>
+			<p class="paper7 ink0 bright"><span>"</span><span class="paper0 ink7 flash bright">C</span><span>"</span><input name="command" type="text" maxlength="29" spellcheck="false" /></p>
+		</form>
+		<div id="gameHead"><img src="img/head.png" alt="" /></div>
+		<div id="gameShare"><a href="javascript:">Tweet your score</a><a href="javascript:">Share on Facebook</a></div>
+		<div id="gameTape">Emulating tape</div>
+	</div>
+
+	<div id="overlay"></div>
+
+	<div id="overlaySVG">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" pointer-events="none" width="100%" height="100%">
+			<pattern id="tvPattern" patternUnits="userSpaceOnUse" x="0" y="0" width="150" height="150">
+				<image xlink:href="img/tv.png" x="0" y="0" width="150" height="150" />
+			</pattern> 
+			<rect fill="url(#tvPattern)" x="0" y="0" width="100%" height="100%" />
+			<image xlink:href="img/vignette.png" x="0" y="0" height="100%" width="100%" preserveAspectRatio="none" />
+		</svg>
+	</div>
+
+	<audio id="audioTitle" preload="auto"><source src="audio/title.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/title.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+	<audio id="audioError" preload="auto"><source src="audio/error.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/error.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+	<audio id="audioEat" preload="auto"><source src="audio/eat.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/eat.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+	<audio id="audioHead" preload="auto"><source src="audio/head.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/head.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+	<audio id="audioExplosion" preload="auto"><source src="audio/explosion.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/explosion.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+
+	<p id="sorry">Sorry, a modern, JavaScript-enabled browser is needed.</p>
+
+
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+	    // init the FB JS SDK
+	    FB.init({
+	      appId      : '383984258388383',                        // App ID from the app dashboard
+	      channelUrl : '//toys.usvsth3m.com/channel.html', // Channel file for x-domain comms
+	      status     : true,                                 // Check Facebook Login status
+	      xfbml      : true                                  // Look for social plugins on the page
+	    });
+
+	    // Additional initialization code such as adding Event Listeners goes here
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
+
+
+	<script>
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-41079103-2']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+
+	<script type='text/javascript'>
+	    var _sf_async_config={};
+	    /** CONFIGURATION START **/
+	    _sf_async_config.uid = 33715;
+	    _sf_async_config.domain = 'usvsth3m.tumblr.com';
+	    _sf_async_config.useCanonical = true;
+	    _sf_async_config.sections = 'Change this to your Section name';  //CHANGE THIS
+	    _sf_async_config.authors = 'Change this to your Author name';    //CHANGE THIS
+	    /** CONFIGURATION END **/
+	    (function(){
+	      function loadChartbeat() {
+	        window._sf_endpt=(new Date()).getTime();
+	        var e = document.createElement('script');
+	        e.setAttribute('language', 'javascript');
+	        e.setAttribute('type', 'text/javascript');
+	        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+	        document.body.appendChild(e);
+	      }
+	      var oldonload = window.onload;
+	      window.onload = (typeof window.onload != 'function') ?
+	      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+	    })();
+	</script>
+
+	<!-- SiteCatalyst Code -->
+	<script type="text/JavaScript"><!--
+	var s_account = "tmrusvsthem,tmrgroupaggregateprod";
+	var s_omnitureDNSAlias = "trinitymirror.112.2o7.net";
+	//--></script>
+	<script language="JavaScript" type="text/javascript" src="http://s.mirror.co.uk/resources/js/s_code.js"></script>
+	<script language="JavaScript" type="text/javascript"><!--
+	s.pageName ="us vs th3m:"+document.title;
+	s.prop5 ="us vs th3m";
+	s.prop1=document.location.host;
+	s.eVar40=document.location.host;
+	s.prop16="MGN5";
+	s.prop21="MGN2";
+	var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+	<script language="JavaScript" type="text/javascript"><!--
+	if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+	//--></script><noscript><img src="http://trinitymirror.112.2o7.net/b/ss/tmrusvsthem,tmrmgnthreeaggprod/1/H.25.2--NS/0?[AQB]&cdp=3&[AQE]"
+	height="1" width="1" border="0" alt="" /></noscript>
+
+
+</body>
+</html>
