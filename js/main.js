@@ -28,7 +28,7 @@ $(window).load(function() {
 	// preload images that'll be needed
 	var preload = ['surface-sunset', 'beach-sunset', 'eat', 'love', 'beach-moonlit', 'beach', 'surface', 'seabed', 'hull', 'estuary', 'leg', 'explode', 'nuclear', 'boat', 'cage', 'success', 'perfect'];
 	$.each(preload, function() {
-		$('<img />').attr('src', '_assets/img/'+this+'.png');
+		$('<img />').attr('src', 'img/'+this+'.png');
 	});
 
 	// hacky intro stuff
@@ -497,7 +497,7 @@ $(window).load(function() {
 		var p = places[place][places[place]._current];
 		if (p.pic != '') {
 			var pic = $('<img>');
-			pic.attr('src', '_assets/img/'+p.pic+'.png');
+			pic.attr('src', 'img/'+p.pic+'.png');
 			$('#gameContent').append(pic);
 			if (p.pic == 'estuary') {
 				$('#gameContent').append('<span class="glitch1 paper3 ink7 flash bright"></span><span class="glitch2 paper4 ink3 bright">_</span>');
@@ -519,7 +519,7 @@ $(window).load(function() {
 		var p = places[place][places[place]._current];
 		if (p.pic != '') {
 			var pic = $('<img>');
-			pic.attr('src', '_assets/img/'+p.pic+'.png');
+			pic.attr('src', 'img/'+p.pic+'.png');
 			$('#gameContent').append(pic);
 			if (p.pic == 'estuary') {
 				$('#gameContent').append('<span class="glitch1 paper3 ink7 flash bright"></span><span class="glitch2 paper4 ink3 bright">_</span>');
@@ -562,7 +562,7 @@ $(window).load(function() {
 		var m = messages[msgId];
 		if (m.pic != '') {
 			var pic = $('<img>');
-			pic.attr('src', '_assets/img/'+m.pic+'.png');
+			pic.attr('src', 'img/'+m.pic+'.png');
 			$('#gameContent').append(pic);
 		}
 		var para = $('<p>');
@@ -630,7 +630,7 @@ $(window).load(function() {
 			} else {
 				// perfect 100%
 				if (score == 100) {
-					pic.attr('src', '_assets/img/perfect.png');
+					pic.attr('src', 'img/perfect.png');
 				}
 			}
 		}
@@ -661,25 +661,6 @@ $(window).load(function() {
 		var t = Math.floor((screen.height - h)/2 - 50);
 		var l = Math.floor((screen.width - w)/2);
 		window.open('https://twitter.com/share?related=usvsth3m&text=' + encodeURIComponent(msg) + '&url=' + encodeURIComponent(window.location.href), winName, 'width='+w+',height='+h+',top='+t+',left='+l+',scrollbars=yes,resizable=yes,toolbar=no,location=no');
-		return false;
-	});
-
-	$('#gameShare a').eq(1).on('click', function() {
-		var msg = 'I scored '+score+'% at JAWS: The Text Adventure! ';
-		if (score == 100) {
-			msg += 'Iâ€™m the perfect killing machine';
-		} else {
-			msg += 'How bitey are you?';
-		}
-
-		FB.ui({
-			method: 'feed',
-			link: 'http://toys.usvsth3m.com/jaws/',
-			picture: 'http://toys.usvsth3m.com/jaws/_assets/img/image_src.png',
-			name: document.title,
-			description: msg
-		}, function(response){});
-
 		return false;
 	});
 
