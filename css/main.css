@@ -78,7 +78,7 @@ body {
 	background: #00f000;
 }
 .paper5 {
-	background: #00f0f0;
+	background: #00f000;
 }
 .paper6 {
 	background: #f0f000;
@@ -135,7 +135,7 @@ body {
 	background: #ffffff;
 }
 .ink0.bright {
-	color: #000000;
+	color: #fff;
 }
 .ink1.bright {
 	color: #0000ff;
@@ -320,7 +320,7 @@ html.play #game {
 }
 #gameTitle h1 + p {
 	position: absolute;
-	top: 13em;
+	top: 10em;
 	left: 0;
 }
 #gameTitle h1 + p + p {
@@ -343,8 +343,6 @@ html.play #game {
 }
 #gameContent img {
 	width: 100%;
-	height: 128px;
-	background: #000000;
 }
 #gameContent p {
 	margin: 0 0 1em 0;
@@ -378,7 +376,7 @@ html.play #game {
 	position: absolute;
 	top: 0;
 	left: 0;
-	cursor: text;
+	cursor: pointer;
 	text-transform: uppercase;
 	outline: none;
 }

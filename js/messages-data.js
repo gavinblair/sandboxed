@@ -5,7 +5,7 @@ var messagesData = {
 		'ending': false,
 		'score': 0,
 		'pic': '',
-		'text': 'Use [HELP] for a list of commands',
+		'text': '',
 		'inv': '',
 		'action': ''
 	},
