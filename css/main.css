@@ -1,0 +1,519 @@
+/* fonts */
+@font-face {
+	font-family: 'speccymedium';
+	src: url('../fonts/speccy-webfont.eot');
+	src: url('../fonts/speccy-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/speccy-webfont.woff') format('woff'),
+	     url('../fonts/speccy-webfont.ttf') format('truetype'),
+	     url('../fonts/speccy-webfont.svg#speccymedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* viewport */
+@-ms-viewport {
+	width: device-width;
+	zoom: 1;
+	min-zoom: 1;
+	max-zoom: 1;
+	user-zoom: fixed;
+}
+@-o-viewport {
+	width: device-width;
+	zoom: 1;
+	min-zoom: 1;
+	max-zoom: 1;
+	user-zoom: fixed;
+}
+@viewport {
+	width: device-width;
+	zoom: 1;
+	min-zoom: 1;
+	max-zoom: 1;
+	user-zoom: fixed;
+}
+
+
+/* reset */
+html *, html *:before, html *:after {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+
+/* general styles */
+html {
+	background: #777777;
+	color: #000000;
+	font-family:'Roboto Condensed', sans-serif;
+	font-size: 16px;
+}
+body {
+	overflow: hidden;
+}
+
+
+/* colours */
+.paper0 {
+	background: #000000;
+}
+.paper1 {
+	background: #0000f0;
+}
+.paper2 {
+	background: #f00000;
+}
+.paper3 {
+	background: #f000f0;
+}
+.paper4 {
+	background: #00f000;
+}
+.paper5 {
+	background: #00f000;
+}
+.paper6 {
+	background: #f0f000;
+}
+.paper7 {
+	background: #f0f0f0;
+}
+.ink0 {
+	color: #000000;
+}
+.ink1 {
+	color: #0000f0;
+}
+.ink2 {
+	color: #f00000;
+}
+.ink3 {
+	color: #f000f0;
+}
+.ink4 {
+	color: #00f000;
+}
+.ink5 {
+	color: #00f0f0;
+}
+.ink6 {
+	color: #f0f000;
+}
+.ink7 {
+	color: #f0f0f0;
+}
+.paper0.bright {
+	background: #000000;
+}
+.paper1.bright {
+	background: #0000ff;
+}
+.paper2.bright {
+	background: #ff0000;
+}
+.paper3.bright {
+	background: #ff00ff;
+}
+.paper4.bright {
+	background: #00ff00;
+}
+.paper5.bright {
+	background: #00ffff;
+}
+.paper6.bright {
+	background: #ffff00;
+}
+.paper7.bright {
+	background: #ffffff;
+}
+.ink0.bright {
+	color: #fff;
+}
+.ink1.bright {
+	color: #0000ff;
+}
+.ink2.bright {
+	color: #ff0000;
+}
+.ink3.bright {
+	color: #ff00ff;
+}
+.ink4.bright {
+	color: #00ff00;
+}
+.ink5.bright {
+	color: #00ffff;
+}
+.ink6.bright {
+	color: #ffff00;
+}
+.ink7.bright {
+	color: #ffffff;
+}
+#game.flash .paper0.flash {
+	color: #000000;
+}
+#game.flash .paper1.flash {
+	color: #0000f0;
+}
+#game.flash .paper2.flash {
+	color: #f00000;
+}
+#game.flash .paper3.flash {
+	color: #f000f0;
+}
+#game.flash .paper4.flash {
+	color: #00f000;
+}
+#game.flash .paper5.flash {
+	color: #00f0f0;
+}
+#game.flash .paper6.flash {
+	color: #f0f000;
+}
+#game.flash .paper7.flash {
+	color: #f0f0f0;
+}
+#game.flash .ink0.flash {
+	background: #000000;
+}
+#game.flash .ink1.flash {
+	background: #0000f0;
+}
+#game.flash .ink2.flash {
+	background: #f00000;
+}
+#game.flash .ink3.flash {
+	background: #f000f0;
+}
+#game.flash .ink4.flash {
+	background: #00f000;
+}
+#game.flash .ink5.flash {
+	background: #00f0f0;
+}
+#game.flash .ink6.flash {
+	background: #f0f000;
+}
+#game.flash .ink7.flash {
+	background: #f0f0f0;
+}
+#game.flash .paper0.bright.flash {
+	color: #000000;
+}
+#game.flash .paper1.bright.flash {
+	color: #0000ff;
+}
+#game.flash .paper2.bright.flash {
+	color: #ff0000;
+}
+#game.flash .paper3.bright.flash {
+	color: #ff00ff;
+}
+#game.flash .paper4.bright.flash {
+	color: #00ff00;
+}
+#game.flash .paper5.bright.flash {
+	color: #00ffff;
+}
+#game.flash .paper6.bright.flash {
+	color: #ffff00;
+}
+#game.flash .paper7.bright.flash {
+	color: #ffffff;
+}
+#game.flash .ink0.bright.flash {
+	background: #000000;
+}
+#game.flash .ink1.bright.flash {
+	background: #0000ff;
+}
+#game.flash .ink2.bright.flash {
+	background: #ff0000;
+}
+#game.flash .ink3.bright.flash {
+	background: #ff00ff;
+}
+#game.flash .ink4.bright.flash {
+	background: #00ff00;
+}
+#game.flash .ink5.bright.flash {
+	background: #00ffff;
+}
+#game.flash .ink6.bright.flash {
+	background: #ffff00;
+}
+#game.flash .ink7.bright.flash {
+	background: #ffffff;
+}
+
+
+/* game */
+#game {
+	visibility: hidden;
+	width: 512px;
+	height: 384px;
+	overflow: hidden;
+	position: relative;
+	font-family: 'speccymedium';
+	font-size: 16px;
+	line-height: 16px;
+	-webkit-font-smoothing: none;
+	font-smoothing: none;
+	-moz-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	cursor: default;
+}
+html.play #game {
+	visibility: visible;
+}
+#game img {
+	display: block;
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -o-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+#game a {
+	text-decoration: none;
+}
+#gameLoaded, #gameTitle {
+	width: 512px;
+	height: 384px;
+}
+#gameLoaded p:first-child + p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#gameTitle h1 {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+#gameTitle h1 img {
+	margin: 0 0 20px 0;
+}
+#gameTitle p:first-child {
+	position: absolute;
+	top: 2em;
+	left: 0;
+	z-index: 1;
+}
+#gameTitle h1 + p {
+	position: absolute;
+	top: 10em;
+	left: 0;
+}
+#gameTitle h1 + p + p {
+	position: absolute;
+	top: 17em;
+	left: 0;
+}
+#gameTitle h1 + p + p + p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#gameContent {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 24em;
+	margin-top: 0;
+}
+#gameContent img {
+	width: 100%;
+}
+#gameContent p {
+	margin: 0 0 1em 0;
+	white-space: pre-wrap;
+}
+#game form {
+	position: absolute;
+	bottom: 25em;
+	left: 0;
+	width: 100%;
+	height: 1em;
+}
+#game form p {
+	margin: 0;
+	width: 100%;
+	height: 1em;
+}
+#game form input {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 0;
+	background: none;
+	color: #000000;
+	font-family: 'speccymedium';
+	font-size: 16px;
+	line-height: 16px;
+	padding: 0 32px 0 16px;
+	width: 512px;
+	height: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	outline: none;
+}
+#game form input:focus {
+	outline: none;
+}
+#game form span:first-child + span {
+	position: absolute;
+	top: 0;
+	left: 1em;
+}
+#game form span:first-child + span + span {
+	position: absolute;
+	top: 0;
+	left: 2em;
+}
+#gameHead {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#gameHead img {
+	width: 32em;
+	height: 24em;
+}
+#gameShare {
+	position: absolute;
+	bottom: 2px;
+	right: 0;
+}
+#gameShare a {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	display: inline-block;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 18px;
+	padding: 1px 0 5px 0;
+	width: 152px;
+	margin: 0 2px 0 0;
+	border-radius: 10px;
+	background: #ff8000;
+	text-shadow: 1px 1px 0 #000000;
+	box-shadow: 1px 1px 0 #000000;
+	line-height: 1.2;
+	text-align: center;
+}
+#game .glitch1 {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	margin: -5em 0 0 0;
+}
+#game .glitch2 {
+	position: absolute;
+	width: 2em;
+	height: 1em;
+	margin: -5em 0 0 1em;
+}
+#gameTape {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 18px;
+	padding: 1px 0 5px 0;
+	width: 152px;
+	border-radius: 10px;
+	background: #777777;
+	text-shadow: 1px 1px 0 #000000;
+	line-height: 1.2;
+	text-align: center;
+}
+
+
+/* overlay */
+#overlay, #overlaySVG {
+	visibility: hidden;
+	pointer-events: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto !important;
+	height: auto !important;
+	z-index: 99;
+	-moz-transform: translateZ(2px);
+	-webkit-transform: translateZ(2px);
+	-ms-transform: translateZ(2px);
+	transform: translateZ(2px);
+}
+#overlay {
+	background: url('../img/vignette.png') no-repeat, url('../img/tv.png');
+	background-size: 100% 100%, 150px 150px;
+}
+html.play #overlay, html.play #overlaySVG {
+	visibility: visible;
+}
+
+
+/* message for unsupported browsers */
+p#sorry {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #990000;
+	color: #ffffff;
+	font-family: sans-serif;
+	font-size: 20px;
+	letter-spacing: 0;
+}
+html.ok p#sorry {
+	display: none;
+}
+
+
+/* small screen hack */
+@media only screen and (max-height: 320px) {
+	html, body {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	body {
+		overflow-y: auto;
+	}
+	#uvt_credits {
+		display: none !important;
+	}
+}
