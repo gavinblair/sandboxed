@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	
-	<title>JAWS: The Text Adventure</title>
+	<title>SANDBOXED: The Text Adventure</title>
 
   
 	<meta charset="utf-8" />
@@ -12,13 +12,12 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="apple-mobile-web-app-title" content="JAWS" />
+	<meta name="apple-mobile-web-app-title" content="SANDBOXED" />
 	<meta name="format-detection" content="telephone=no" />
 
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 
 	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
-	<link rel="shortcut icon" href="http://images.icnetwork.co.uk/collections/usvsth3m/favicon.ico" />
 	<link rel="image_src" href="img/image_src.png" />
 	<link rel="stylesheet" href="css/normalize.css" media="screen,print" />
 	<link rel="stylesheet" href="css/main.css" media="screen,print" />
@@ -26,33 +25,214 @@
 
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="js/tools.js"></script>
-	<script src="js/places-data.js"></script>
-	<script src="js/messages-data.js"></script>
+	<script src="js/ich.js"></script>
 	<script src="js/main.js"></script>
 
-
+	<!-- TEMPLATE -->
+	<script id='one' type="text/html">
+		<img src='img/1.gif' />
+		<br />
+		<p>
+			A complete noob stands in a field. He has just entered a certain <span class='paper7' onclick="$('#game').html(ich.game());">game</span> for the first time. It is dark, and the sounds of horrible growling fill the air.
+			<br /><br />
+			Enter your name:
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.two());">&gt; Peter</span>
+		</p>
+	</script>
+	<script id='game' type='text/html'>
+		<p>
+			You are in an open world sandbox game called Sandboxed.  This is your first time playing a game like this, and to be honest you are <span class='paper7' onclick="$('#game').html(ich.scared());">a little scared</span>.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.one());">&lt;--</span>
+		</p>
+	</script>
+	<script id='scared' type='text/html'>
+		<p>
+			Is it supposed to be this dark when you start the game?
+		</p>
+		<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.one());">&lt;--</span>
+	</script>
+	<script id='two' type="text/html">
+		<img src='img/2.gif' />
+		<br />
+		<p>
+			Your name is Peter, but online you go by forpetessake.
+			<br /><br />
+			The growls are getting louder. What will you do?
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.three());">&gt; look around</span>
+		</p>
+	</script>
+	<script id="three" type="text/html">
+		<img src='img/3.gif' />
+		<br />
+		<p>
+			You cannot see much. After some straining you think you can see <span class='paper7' onclick="$('#game').html(ich.eyes());">red glowing eyes</span> in the darkness. You are standing in a field of tall grass.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.four());">&gt; pick up a blade of grass</span>
+		</p>
+	</script>
+	<script id="eyes" type="text/html">
+		<p>
+			The red glowing eyes are coming closer, and the growling intensifies.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.three());">&lt;--</span>
+		</p>
+	</script>
+	<script id="four" type="text/html">
+		<img src='img/4.gif' />
+		<br />
+		<p>
+			You pluck a large, sturdy looking blade of grass and prepare to defend yourself with it. Boy, do you feel <span class='paper7' onclick="$('#game').html(ich.stupid());">stupid</span>. And <span class='paper7' onclick="$('#game').html(ich.terrified());">terrified</span>.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.five());">&gt; use blade of grass as a sword</span>
+		</p>
+	</script>
+	<script id='stupid' type='text/html'>
+		<p>
+			You are not even Level 1 yet, how hard could these things be to kill? There was no tutorial, no wise wizard handing you a sword and sending you on your way... You just woke up in this terrifying grass field from hell!
+			<br /><br />
+			So far, you think, this game sucks.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.four());">&lt;--</span>
+		</p>
+	</script>
+	<script id='terrified' type='text/html'>
+		<p>
+			You can now see sharp teeth bared under each set of red eyes.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.four());">&lt;--</span>
+		</p>
+	</script>
+	<script id="five" type="text/html">
+		<img src='img/5.gif' />
+		<br />
+		<p>
+			You hold out the <span class='paper7' onclick="$('#game').html(ich.grass());">blade of grass</span> to the enclosing group of red eyes and wave it vigorously.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.six());">&gt; growl at the red eye monsters</span>
+		</p>
+	</script>
+	<script id='grass' type='text/html'>
+		<p>
+			It is not super effective.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.five())">&lt;--</span>
+		</p>
+	</script>
+	<script id="six" type="text/html">
+		<img src='img/6.gif' />
+		<br />
+		<p>
+			You give your best growl, hoping to intimidate- uh oh, looks like you are being ripped to shreds by monsters. You guess you can say you saw that coming. After a few seconds you are dead.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.gameover());">--&gt;</span>
+		</p>
+	</script>
+	<script id="gameover" type="text/html">
+		<p>
+			GAME OVER
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.seven())">respawn</span>
+		</p>
+	</script>
+	<script id="seven" type="text/html">
+		<img src='img/7.gif?v=2' />
+		<br />
+		<p>
+			You wake up in the same field. It is still dark, and there are still monsters all over. It looks like they have just finished ripping someone to shreds, and they are now looking at you.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.eight());">&gt; RUN</span>
+		</p>
+	</script>
+	<script id="eight" type="text/html">
+		<img src='img/8.gif' />
+		<br />
+		<p>
+			You bolt away, hoping to outrun the monsters. You take a few steps before tripping on a thick patch of grass. In seconds the monsters are on top of you, and you are once again ripped to shreds.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.nine());">&gt; GAME OVER</span>
+		</p>
+	</script>
+	<script id="nine" type="text/html">
+		<img src='img/9.gif' />
+		<br />
+		<p>
+			GAME OVER
+			<br /><br />
+			This is ridiculous. This game totally sucks! There is no way you can get past this first stage!
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.ten());">&gt; respawn again</span>
+		</p>
+	</script>
+	<script id="ten" type="text/html">
+		<img src='img/10.gif' />
+		<br />
+		<p>
+			You wake up again in the dark field. This time you seem to be very tall.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.eleven());">&gt; look down</span>
+		</p>
+	</script>
+	<script id="eleven" type="text/html">
+		<img src='img/11.gif' />
+		<br />
+		<p>
+			You look down to find that you have spawned on the back of one of the monsters! It looks like a giant wolf. It is busy eating some poor sucker and does not notice you.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.twelve());">&gt; look around again</span>
+		</p>
+	</script>
+	<script id="twelve" type="text/html">
+		<img src='img/12.gif' />
+		<br />
+		<p>
+			The other wolves are also chowing down on the poor schmuck. One looks up and spots you.
+			<br /><br />
+			Before you can act, the wolf that spotted you leaps and you both fall to the ground. You make a delicious third course.
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.thirteen());">&gt; sigh. then respawn.</span>
+		</p>
+	</script>
+	<script id="thirteen" type="text/html">
+		<img src='img/13.gif' />
+		<br />
+		<p>
+			//sunrise cutscene
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.fourteen());">--&gt;</span>
+		</p>
+	</script>
+	<script id="fourteen" type="text/html">
+		<img src='img/14.gif' />
+		<br />
+		<p>
+			You have had enough of this. 
+			<br /><br />
+			<span class='paper7' onclick="$('#game').html(ich.fourteen());">--&gt;</span>
+		</p>
+	</script>
 </head>
 <body>
 
-	<div id="game" class="paper7">
+	<div id="game" class="paper0">
 		<div id="gameContent" class="ink1"></div>
 		<div id="gameTitle" class="paper5 bright">
 			<p class="ink2 bright">Gavin Blair presents</p>
-			<h1><img src="img/title.png" alt="" />JAWS</h1>
+			<h1><img src="img/title.png" alt="" />SANDBOXED</h1>
 			<p class="ink1 bright">THE ADVENTURE</p>
 			<p class="ink0 bright">&nbsp;© 1985<br />&nbsp;Coding by Gavin Blair<br />&nbsp;Audio by Brandon Blair</p>
-			<p class="paper1 ink7 bright"><br />&nbsp;+++ <span class="paper1 ink7 bright flash">Press Any Key</span> To Start +++</p>
+			<p class="clicker paper1 ink7 bright"><br />&nbsp;+++ <span class="paper1 ink7 bright flash">Press Here</span> To Start +++</p>
 		</div>
 		<div id="gameLoaded" class="paper7">
 			<p><br />Program: SANDBOXED</p>
-			<p class="paper2 ink6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAME LOADED<br />&nbsp;&nbsp;Stop tape and <span class="paper2 ink6 flash">Press any key</span></p>
+			<p class="clicker paper2 ink6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GAME LOADED<br />&nbsp;&nbsp;Stop tape and <span class="paper2 ink6 flash">Press Here</span></p>
 		</div>
 		<form>
 			<p class="paper7 ink0 bright"><span>"</span><span>"</span><input disabled='true' name="command" type="text" maxlength="29" spellcheck="false" /></p>
 		</form>
-		<div id="gameHead"><img src="img/head.png" alt="" /></div>
-		<div id="gameShare"><a href="javascript:">Tweet your score</a><a href="javascript:">Share on Facebook</a></div>
-		<div id="gameTape">Emulating tape</div>
 	</div>
 
 	<div id="overlay"></div>
@@ -66,12 +246,8 @@
 			<image xlink:href="img/vignette.png" x="0" y="0" height="100%" width="100%" preserveAspectRatio="none" />
 		</svg>
 	</div>
-
-	<audio id="audioTitle" preload="auto"><source src="audio/title.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/title.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
-	<audio id="audioError" preload="auto"><source src="audio/error.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/error.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
-	<audio id="audioEat" preload="auto"><source src="audio/eat.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/eat.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
-	<audio id="audioHead" preload="auto"><source src="audio/head.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/head.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
-	<audio id="audioExplosion" preload="auto"><source src="audio/explosion.mp3" type='audio/mpeg; codecs="mp3"' /><source src="audio/explosion.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
+	<img src='img/sound.gif' id='sound' />
+	<audio id="audioTitle" preload="auto"><source src="audio/Title.mp3" type='audio/mp3; codecs="mp3"' /><source src="audio/Title.ogg" type='audio/ogg; codecs="vorbis"' /></audio>
 
 	<p id="sorry">Sorry, a modern, JavaScript-enabled browser is needed.</p>
 

@@ -59,11 +59,14 @@ html {
 body {
 	overflow: hidden;
 }
-
+.clicker {
+	cursor: pointer;
+}
 
 /* colours */
 .paper0 {
 	background: #000000;
+	color: #fff;
 }
 .paper1 {
 	background: #0000f0;
@@ -85,6 +88,7 @@ body {
 }
 .paper7 {
 	background: #f0f0f0;
+	color: #000;
 }
 .ink0 {
 	color: #000000;
@@ -126,7 +130,7 @@ body {
 	background: #00ff00;
 }
 .paper5.bright {
-	background: #00ffff;
+	background: #000000;
 }
 .paper6.bright {
 	background: #ffff00;
@@ -150,7 +154,7 @@ body {
 	color: #00ff00;
 }
 .ink5.bright {
-	color: #00ffff;
+	color: #000000;
 }
 .ink6.bright {
 	color: #ffff00;
@@ -222,7 +226,7 @@ body {
 	color: #00ff00;
 }
 #game.flash .paper5.bright.flash {
-	color: #00ffff;
+	color: #000000;
 }
 #game.flash .paper6.bright.flash {
 	color: #ffff00;
@@ -246,7 +250,7 @@ body {
 	background: #00ff00;
 }
 #game.flash .ink5.bright.flash {
-	background: #00ffff;
+	background: #000000;
 }
 #game.flash .ink6.bright.flash {
 	background: #ffff00;
@@ -255,7 +259,9 @@ body {
 	background: #ffffff;
 }
 
-
+span.paper7 {
+	cursor: pointer;
+}
 /* game */
 #game {
 	visibility: hidden;
@@ -265,7 +271,7 @@ body {
 	position: relative;
 	font-family: 'speccymedium';
 	font-size: 16px;
-	line-height: 16px;
+	line-height: 20px;
 	-webkit-font-smoothing: none;
 	font-smoothing: none;
 	-moz-transform-origin: 0 0;
@@ -410,24 +416,6 @@ html.play #game {
 	bottom: 2px;
 	right: 0;
 }
-#gameShare a {
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	display: inline-block;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: bold;
-	color: #ffffff;
-	font-size: 18px;
-	padding: 1px 0 5px 0;
-	width: 152px;
-	margin: 0 2px 0 0;
-	border-radius: 10px;
-	background: #ff8000;
-	text-shadow: 1px 1px 0 #000000;
-	box-shadow: 1px 1px 0 #000000;
-	line-height: 1.2;
-	text-align: center;
-}
 #game .glitch1 {
 	position: absolute;
 	width: 1em;
@@ -478,6 +466,7 @@ html.play #game {
 	transform: translateZ(2px);
 }
 #overlay {
+	pointer-events:none;
 	background: url('../img/vignette.png') no-repeat, url('../img/tv.png');
 	background-size: 100% 100%, 150px 150px;
 }
@@ -499,6 +488,16 @@ p#sorry {
 }
 html.ok p#sorry {
 	display: none;
+}
+
+#sound {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#sound.off{
+	opacity: .5;
 }
 
 
